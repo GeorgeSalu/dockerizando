@@ -8,6 +8,7 @@ import { Convidado } from './convidado';
 })
 export class AppService {
 
+  apiUr: string = 'http://convidadosapi:8080'
   apiUrlLocal: string = 'http://localhost:8080'
 
   constructor(private http: HttpClient) { }
