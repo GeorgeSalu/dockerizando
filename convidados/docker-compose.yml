@@ -4,7 +4,7 @@ services:
   convidados-api:
     build: 
       dockerfile: Dockerfile
-    container_name: convidados
+    container_name: convidados-api
     restart: on-failure
     ports:
       - "8080:8080"
