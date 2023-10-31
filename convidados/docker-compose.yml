@@ -1,6 +1,20 @@
 version: '3.3'
 
 services:
+  db:
+    image: mysql
+    container_name: convidados-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: festa
+    restart: always
+    networks:
+      - workspace
+    expose:
+      - 3306
+
   convidados-api:
     build: 
       dockerfile: Dockerfile
@@ -12,6 +26,7 @@ services:
       - 8080
     networks:
       - workspace
+  
 
 networks:
   workspace: 
