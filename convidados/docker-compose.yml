@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+  convidados-api:
+    build: 
+      dockerfile: Dockerfile
+    container_name: convidados
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    expose:
+      - 8080
+    networks:
+      - workspace
+
+networks:
+  workspace: 
+    driver: bridge
